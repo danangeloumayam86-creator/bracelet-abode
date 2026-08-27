@@ -15,6 +15,50 @@
         </nav>
     </header>
 
+<main>
+    <form>
+        <fieldset>
+
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" 
+                   placeholder="Your name.." 
+                   autocomplete="given-name" required>
+            <br>
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" 
+                   placeholder="Your last name.." 
+                   autocomplete="family-name" required>
+            <br>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" 
+                   placeholder="Your Email.." 
+                   autocomplete="email" required>
+            <br>
+
+            <label for="concern">Question or Concern</label>
+            <select id="concern" name="concern" required>
+                <option value="">-- Please select.. --</option>
+                <option value="pquestion">Product Question</option>
+                <option value="ostatus">Order Status</option>
+                <option value="complaint">Complaint</option>
+                <option value="other">Other</option>
+            </select>
+            <br>
+
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" 
+                      placeholder="Write something.." 
+                      style="height:100px" required></textarea>
+            <br>
+
+            <input type="submit" value="Submit">
+
+        </fieldset>
+    </form>
+</main>
+
     <main>
         <h2>Get in Touch</h2>
         <ul>
@@ -24,7 +68,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Bracelet Abode</p>
+        <p>&copy; 2026 Bracelet Abode</p>   
     </footer>
 </body>
 </html>
