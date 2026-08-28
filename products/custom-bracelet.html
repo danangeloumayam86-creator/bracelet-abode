@@ -44,6 +44,44 @@
                 <td>₱130</td>
             </tr>
         </table>
+
+                <h2>Order Enquiry</h2>
+        <form>
+            <p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="20" value="1">
+            </p>
+
+            <fieldset>
+                <legend>Delivery Method</legend>
+
+                <input type="radio" id="delivery-pickup" name="delivery" value="pickup">
+                <label for="delivery-pickup">Pickup</label><br>
+
+                <input type="radio" id="delivery-standard" name="delivery" value="standard">
+                <label for="delivery-standard">Standard Delivery</label><br>
+
+                <input type="radio" id="delivery-express" name="delivery" value="express">
+                <label for="delivery-express">Express Delivery</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Optional Extras</legend>
+
+                <input type="checkbox" id="extra-giftwrap" name="extras" value="giftwrap">
+                <label for="extra-giftwrap">Gift Wrapping</label><br>
+
+                <input type="checkbox" id="extra-express-handling" name="extras" value="express-handling">
+                <label for="extra-express-handling">Express Handling</label>
+            </fieldset>
+
+            <p>
+                <label for="email">Contact Email:</label>
+                <input type="email" id="email" name="email" placeholder="Youe email.." required>
+            </p>
+
+            <button type="submit">Send Enquiry</button>
+        </form>
     </main>
 
     <footer>
