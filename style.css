@@ -1,0 +1,243 @@
+/* =========================================
+   Variables
+   ========================================= */
+:root {
+    --brand-color: #a9744f;   /* warm terracotta/leather brown */
+    --ink: #3e2f28;           /* dark brown ink for text */
+    --muted: #8c7b6b;         /* muted taupe/grey */
+    --bg-light: #f4ece1;      /* cream parchment background */
+    --accent: #c9a66b;        /* muted gold accent */
+    --card-bg: #fffaf3;       /* off-white card background */
+}
+
+/* =========================================
+   Base styles
+   ========================================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+    color: var(--ink);
+    background-color: var(--bg-light);
+}
+
+h1, h2, h3 {
+    font-family: 'Trebuchet MS', Georgia, serif;
+    color: var(--brand-color);
+    letter-spacing: 0.5px;
+}
+
+a {
+    color: var(--brand-color);
+}
+
+/* =========================================
+   Layout regions
+   ========================================= */
+header {
+    background-color: var(--brand-color);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-bottom: 4px solid var(--accent);
+}
+
+header h1 {
+    color: #fff;
+    margin: 0 0 0.25rem 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 0;
+    color: var(--bg-light);
+    font-size: 0.95rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+nav a:hover {
+    border-bottom: 2px solid var(--accent);
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+footer {
+    background-color: var(--ink);
+    color: var(--bg-light);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* =========================================
+   Components
+   ========================================= */
+
+/* Product cards (article on index.html) */
+article {
+    background-color: var(--card-bg);
+    border: 1px solid var(--muted);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(62, 47, 40, 0.1);
+}
+
+article h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+article p {
+    color: var(--muted);
+}
+
+/* uniform, centered product images everywhere (index + product pages) */
+img {
+    display: block;
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid var(--accent);
+}
+
+/* View details / back links styled as buttons */
+article a,
+main > a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background-color: var(--brand-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+article a:hover,
+main > a:hover {
+    background-color: var(--ink);
+}
+
+/* Product detail tables */
+table {
+    width: 100%;
+    max-width: 500px;
+    margin: 1.5rem auto;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+}
+
+table th, table td {
+    border: 1px solid var(--muted);
+    padding: 0.75rem;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--accent);
+    color: var(--ink);
+    width: 35%;
+}
+
+/* Forms (contact + order enquiry) */
+form {
+    max-width: 500px;
+    margin: 1.5rem auto;
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--muted);
+}
+
+fieldset {
+    border: 1px solid var(--muted);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+legend {
+    color: var(--brand-color);
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+label {
+    display: block;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+    color: var(--ink);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--muted);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fff;
+    color: var(--ink);
+}
+
+input[type="submit"],
+button[type="submit"] {
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    background-color: var(--brand-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: var(--ink);
+}
