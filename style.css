@@ -2,11 +2,11 @@
    Variables
    ========================================= */
 :root {
-    --brand-color: #a9744f;   /* warm terracotta/leather brown */
+    --brand-color: #8B4513;   /* saddle brown - darkened for 4.5:1 contrast */
     --ink: #3e2f28;           /* dark brown ink for text */
-    --muted: #8c7b6b;         /* muted taupe/grey */
+    --muted: #6b5d52;         /* muted taupe - darkened for 4.5:1 contrast */
     --bg-light: #f4ece1;      /* cream parchment background */
-    --accent: #c9a66b;        /* muted gold accent */
+    --accent: #c9a66b;        /* muted gold accent (decorative only) */
     --card-bg: #fffaf3;       /* off-white card background */
 }
 
@@ -54,7 +54,7 @@ header h1 {
 
 header p {
     margin: 0;
-    color: var(--bg-light);
+    color: #fff;
     font-size: 0.95rem;
 }
 
@@ -108,24 +108,25 @@ footer {
    Components
    ========================================= */
 
-/* Product cards (article on index.html) */
-article {
-    background-color: var(--card-bg);
-    border: 1px solid var(--muted);
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
+/* Product cards - reusable class (5.2 requirement) */
+.product-card {
+    background-color: var(--card-bg);      /* 1. background colour */
+    border-radius: 10px;                   /* 1. border-radius */
+    padding: 24px;                          /* 2. at least 16px padding */
+    border-left: 6px solid var(--brand-color); /* 3. coloured left border */
+    margin-bottom: 2rem;                   /* 4. margin-bottom so cards don't touch */
     text-align: center;
     box-shadow: 0 2px 6px rgba(62, 47, 40, 0.1);
 }
 
-article h3 {
+.product-card h3 {
     margin-top: 0;
-    font-size: 1.3rem;
+    font-size: 1.4rem;      /* 5. distinct font-size */
+    color: var(--brand-color); /* 5. distinct color */
 }
 
-article p {
-    color: var(--muted);
+.product-card p {
+    color: var(--ink);
 }
 
 /* uniform, centered product images everywhere (index + product pages) */
@@ -141,7 +142,7 @@ img {
 }
 
 /* View details / back links styled as buttons */
-article a,
+.product-card a,
 main > a {
     display: inline-block;
     margin-top: 0.5rem;
@@ -153,7 +154,7 @@ main > a {
     font-size: 0.9rem;
 }
 
-article a:hover,
+.product-card a:hover,
 main > a:hover {
     background-color: var(--ink);
 }
@@ -171,15 +172,15 @@ table th, table td {
     border: 1px solid var(--muted);
     padding: 0.75rem;
     text-align: left;
+    color: var(--ink);
 }
 
 table th {
     background-color: var(--accent);
-    color: var(--ink);
     width: 35%;
 }
 
-/* Forms (contact + order enquiry) */
+/* Forms (contact + order enquiry) - 5.2 requirements */
 form {
     max-width: 500px;
     margin: 1.5rem auto;
@@ -191,13 +192,13 @@ form {
 
 fieldset {
     border: 1px solid var(--muted);
-    border-radius: 6px;
+    border-radius: 8px;        /* border-radius on fieldset */
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 16px;              /* padding on fieldset */
 }
 
 legend {
-    color: var(--brand-color);
+    color: var(--brand-color);  /* styled legend using brand colour */
     font-weight: bold;
     padding: 0 0.5rem;
 }
@@ -216,7 +217,7 @@ input[type="number"],
 select,
 textarea {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.6rem 0.75rem;   /* consistent padding on inputs/textarea */
     border: 1px solid var(--muted);
     border-radius: 4px;
     font-family: inherit;
@@ -228,16 +229,27 @@ textarea {
 input[type="submit"],
 button[type="submit"] {
     margin-top: 1rem;
-    padding: 0.6rem 1.5rem;
-    background-color: var(--brand-color);
+    padding: 0.6rem 1.5rem;     /* padding on button */
+    background-color: var(--brand-color); /* background colour */
     color: #fff;
-    border: none;
+    border: none;               /* no default border */
     border-radius: 6px;
     font-size: 1rem;
-    cursor: pointer;
+    cursor: pointer;            /* cursor: pointer */
 }
 
 input[type="submit"]:hover,
 button[type="submit"]:hover {
     background-color: var(--ink);
+}
+
+/* Visible focus state - Lesson 4.6 requirement.
+   NEVER use outline: none without a replacement -
+   this outline is what keyboard users rely on to see where they are. */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: 3px solid var(--brand-color);
+    outline-offset: 2px;
 }
