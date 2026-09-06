@@ -253,3 +253,18 @@ button:focus {
     outline: 3px solid var(--brand-color);
     outline-offset: 2px;
 }
+/* Radio & checkbox labels should sit inline next to their input, not stack */
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline;
+    font-weight: normal;
+    margin: 0;
+    color: var(--ink);
+}
