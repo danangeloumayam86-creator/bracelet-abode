@@ -112,13 +112,19 @@ footer {
    Components
    ========================================= */
 
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
 /* Product cards - reusable class (5.2 requirement) */
 .product-card {
     background-color: var(--card-bg);      /* 1. background colour */
     border-radius: 10px;                   /* 1. border-radius */
     padding: 24px;                          /* 2. at least 16px padding */
     border-left: 6px solid var(--brand-color); /* 3. coloured left border */
-    margin-bottom: 2rem;                   /* 4. margin-bottom so cards don't touch */
+    flex: 1 1 240px;                 
     text-align: center;
     box-shadow: 0 2px 6px rgba(62, 47, 40, 0.1);
 }
