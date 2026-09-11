@@ -38,39 +38,43 @@ a {
 /* =========================================
    Layout regions
    ========================================= */
-header {
+.site-header {
     background-color: var(--brand-color);
     color: #fff;
-    padding: 1.5rem 2rem;
-    text-align: center;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 4px solid var(--accent);
 }
 
-header h1 {
+.site-title h1 {
     color: #fff;
-    margin: 0 0 0.25rem 0;
-    font-size: 2rem;
+    margin: 0;
+    font-size: 1.75rem;
 }
 
-header p {
+.site-title p {
     margin: 0;
     color: #fff;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
-nav ul {
+.site-header > h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+.site-header nav ul {
+    display: flex;
+    gap: 20px;
     list-style: none;
     padding: 0;
-    margin: 1rem 0 0 0;
-    text-align: center;
+    margin: 0;
 }
 
-nav li {
-    display: inline-block;
-    margin: 0 1rem;
-}
-
-nav a {
+.site-header nav a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -80,7 +84,7 @@ nav a {
     transition: border-color 0.2s ease;
 }
 
-nav a:hover {
+.site-header nav a:hover {
     border-bottom: 2px solid var(--accent);
 }
 
@@ -267,4 +271,23 @@ input[type="checkbox"] + label {
     font-weight: normal;
     margin: 0;
     color: var(--ink);
+}
+
+/* Hero banner - centered horizontally and vertically */
+.hero {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: var(--brand-color);
+    font-weight: bold;
+    margin: 0;
 }
