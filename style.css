@@ -24,14 +24,27 @@ body {
     color: var(--ink);
     background-color: var(--bg-light);
 
-     /* page skeleton grid */
+    /* Base (mobile): single column, everything stacked.
+       Products (main) come before secondary content (side). */
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-        "masthead masthead"
-        "side     main"
-        "foot     foot";
+        "masthead"
+        "main"
+        "side"
+        "foot";
     gap: 16px;
+}
+
+/* Enhance at tablet and up: sidebar + main side by side */
+@media (min-width: 700px) {
+    body {
+        grid-template-columns: 220px 1fr;
+        grid-template-areas:
+            "masthead masthead"
+            "side     main"
+            "foot     foot";
+    }
 }
 
 h1, h2, h3 {
@@ -78,7 +91,8 @@ a {
 
 .site-header nav ul {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 12px 20px;
     list-style: none;
     padding: 0;
     margin: 0;
