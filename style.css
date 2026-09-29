@@ -23,6 +23,15 @@ body {
     line-height: 1.6;
     color: var(--ink);
     background-color: var(--bg-light);
+
+     /* page skeleton grid */
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+        "masthead masthead"
+        "side     main"
+        "foot     foot";
+    gap: 16px;
 }
 
 h1, h2, h3 {
@@ -46,6 +55,7 @@ a {
     justify-content: space-between;
     align-items: center;
     border-bottom: 4px solid var(--accent);
+    grid-area: masthead;
 }
 
 .site-title h1 {
@@ -88,10 +98,10 @@ a {
     border-bottom: 2px solid var(--accent);
 }
 
-main {
-    max-width: 900px;
-    margin: 0 auto;
+main { 
     padding: 2rem 1.5rem;
+    grid-area: main;
+
 }
 
 main h2 {
@@ -106,6 +116,7 @@ footer {
     padding: 1rem;
     font-size: 0.9rem;
     margin-top: 2rem;
+    grid-area: foot;
 }
 
 /* =========================================
@@ -296,4 +307,40 @@ input[type="checkbox"] + label {
     color: var(--brand-color);
     font-weight: bold;
     margin: 0;
+}
+
+/* Sidebar */
+aside {
+    grid-area: side;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border-left: 6px solid var(--brand-color);
+    height: fit-content;
+}
+
+aside h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    color: var(--brand-color);
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+
+aside li {
+    margin-bottom: 0.5rem;
+}
+
+aside a {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+aside a:hover {
+    color: var(--brand-color);
+    text-decoration: underline;
 }
