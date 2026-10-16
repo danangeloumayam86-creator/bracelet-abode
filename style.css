@@ -366,3 +366,22 @@ aside a:hover {
     margin-bottom: 1.5rem;
 }
 
+/* Conditions/ JAVA */
+.shop-info {
+    background-color: var(--card-bg);
+    border-left: 6px solid var(--brand-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.shop-info h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.shop-info p {
+    margin: 0.5rem 0;
+    color: var(--ink);
+}
