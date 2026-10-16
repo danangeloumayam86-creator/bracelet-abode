@@ -358,3 +358,11 @@ aside a:hover {
     color: var(--brand-color);
     text-decoration: underline;
 }
+
+.product-summary {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+}
+
